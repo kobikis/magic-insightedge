@@ -46,6 +46,7 @@ object EventsStreamApp {
     val groupId = opt[String]("group-id", required = true)
     val batchDuration = opt[String]("batch-duration", required = true)
     val checkpointDir = opt[String]("checkpoint-dir", required = true)
+    val executorCores = opt[String]("executor-cores", required = false)
     verify()
   }
 

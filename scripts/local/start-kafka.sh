@@ -21,4 +21,4 @@ echo "Waiting 5 seconds..."
 sleep 5
 
 echo "Creating Kafka topics"
-$KAFKA_HOME/bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2182 --replication-factor 1 --partitions 1 --topic car_events
+$KAFKA_HOME/bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 1 --topic car_events

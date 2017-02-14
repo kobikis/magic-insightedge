@@ -23,6 +23,7 @@ $INSIGHTEDGE_HOME/bin/insightedge-submit \
     --space-name insightedge-space \
     --lookup-groups insightedge \
     --lookup-locators $ieHost
+    --executor-cores 2 \
 
 popd
 

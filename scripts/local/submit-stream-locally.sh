@@ -13,7 +13,7 @@ echo "baseDir=$baseDir"
 streamJar="$baseDir/events-streaming/target/events-streaming.jar"
 
 ieHost=localhost
-zookeeper=localhost:2182
+zookeeper=localhost:2181
 checkpointDir="magic-checkpoint"
 
 $INSIGHTEDGE_HOME/bin/insightedge-submit \
@@ -27,6 +27,7 @@ $INSIGHTEDGE_HOME/bin/insightedge-submit \
     --lookup-groups insightedge \
     --lookup-locators $ieHost \
     --batch-duration 1 \
+    --executor-cores 2 \
     --checkpoint-dir "C1"
 
 popd

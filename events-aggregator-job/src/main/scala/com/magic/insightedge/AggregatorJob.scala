@@ -51,7 +51,6 @@ object AggregatorJob {
     val spaceName = opt[String]("space-name", required = true)
     val lookupGroups = opt[String]("lookup-groups", required = true)
     val lookupLocators = opt[String]("lookup-locators", required = true)
-    val executorCores = opt[String]("executor-cores", required = false)
     verify()
   }
 

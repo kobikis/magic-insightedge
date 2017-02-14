@@ -18,12 +18,12 @@ ieHost=localhost
 $INSIGHTEDGE_HOME/bin/insightedge-submit \
     --class com.magic.insightedge.AggregatorJob \
     --master spark://$ieHost:7077 \
+    --executor-cores 2 \
     $jobJar \
     --master-url spark://$ieHost:7077 \
     --space-name insightedge-space \
     --lookup-groups insightedge \
     --lookup-locators $ieHost
-    --executor-cores 2 \
 
 popd
 

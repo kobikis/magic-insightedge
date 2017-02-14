@@ -1,5 +1,6 @@
 package com.magic.insightedge
 
+import java.util
 import java.util.{Calendar, UUID}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -33,10 +34,10 @@ object AggregatorJob {
     val aggCarModelCounts = df.groupBy("modelId")
       .agg("modelId" -> "count").collect()
 
-    var aggMap = Map[Int, Long]()
+    var aggMap = new util.HashMap[Int, Long]()
 
     aggCarModelCounts.foreach( l =>
-     aggMap += (l.get(0).asInstanceOf[Int] -> l.get(1).asInstanceOf[Long])
+     aggMap.put(l.get(0).asInstanceOf[Int], l.get(1).asInstanceOf[Long])
     )
 
     sql.sparkContext.saveToGrid(new model.AggregatedCar(uuid, now, aggMap))

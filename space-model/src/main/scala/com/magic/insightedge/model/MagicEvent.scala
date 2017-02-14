@@ -1,5 +1,6 @@
 package com.magic.insightedge.model
 
+import java.util
 import java.util.Date
 
 import org.insightedge.scala.annotation.SpaceId
@@ -53,7 +54,7 @@ case class AggregatedCar(
                      var date: Date,
 
                      @BeanProperty
-                     var modelIdAgg: Map[Int, Long]
+                     var modelIdAgg: util.HashMap[Int, Long]
                    )  {
-  def this() = this(null, null, Map[Int, Long]())
+  def this() = this(null, null, null)
 }
